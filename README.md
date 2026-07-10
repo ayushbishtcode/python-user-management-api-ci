@@ -301,37 +301,33 @@ SUCCESS
 
 # 📸 Screenshots
 
-Add screenshots to the `screenshots/` directory and update the paths below.
-
 ## Jenkins Dashboard
 
-```
-screenshots/jenkins-dashboard.png
-```
+![Jenkins Dashboard](screenshots/jenkins-dashboard.png)
+
+---
 
 ## Successful Pipeline
 
-```
-screenshots/pipeline-success.png
-```
+![Successful Pipeline](screenshots/pipeline-success.png)
+
+---
 
 ## Jenkins Console Output
 
-```
-screenshots/console-output.png
-```
+![Jenkins Console Output](screenshots/console-output.png)
+
+---
 
 ## GitHub Webhook
 
-```
-screenshots/github-webhook.png
-```
+![GitHub Webhook](screenshots/github-webhook.png)
+
+---
 
 ## Flask API
 
-```
-screenshots/flask-api.png
-```
+![Flask API](screenshots/flask-api.png)
 
 ---
 
