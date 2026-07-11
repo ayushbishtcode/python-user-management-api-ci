@@ -36,6 +36,16 @@ pipeline {
             }
         }
 
+        stage('Check Docker') {
+            steps {
+                sh '''
+                    echo "PATH=$PATH"
+                    which docker
+                    docker --version
+                 '''
+             }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh '''
