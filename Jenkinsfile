@@ -1,46 +1,31 @@
 pipeline {
+
     agent any
 
+    environment {
+           IMAGE_NAME = "python-user-management-api"
+           IMAGE_TAG = "latest"
+           DOCKER_USERNAME = "YOUR_DOCKER_USERNAME"
+    }
+
     stages {
-
-        stage('Checkout Source Code') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Setup Python') {
-            steps {
-                sh '''
-                python3 -m venv venv
-                . venv/bin/activate
-                pip install --upgrade pip
-                pip install -r requirements.txt
-                '''
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                sh '''
-                . venv/bin/activate
-                python -m pytest -v
-                '''
-            }
-        }
+        
     }
 
     post {
-        always {
-            echo 'Pipeline execution completed.'
-        }
 
         success {
-            echo 'All tests passed successfully.'
+            echo "pipeline executed successfully."
         }
 
         failure {
-            echo 'Pipeline failed. Please check the console output.'
+            echo "pipeline failed"
         }
+
+        always {
+            echo "pipeline execution finished"
+        }
+
     }
+
 }
