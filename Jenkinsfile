@@ -51,8 +51,10 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
+                    export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
                     docker build \
-                        -t ${DOCKER_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG} .
+                    -t ${DOCKER_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG} .
                 '''
             }
         }
@@ -67,6 +69,8 @@ pipeline {
                     )
                 ]) {
                     sh '''
+                        export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+                        
                         echo "$DOCKER_PASS" | docker login \
                             -u "$DOCKER_USER" \
                             --password-stdin
