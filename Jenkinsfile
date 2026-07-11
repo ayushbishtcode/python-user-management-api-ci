@@ -9,6 +9,14 @@ pipeline {
     }
 
     stages {
+
+        stage ('Hello') {
+            steps {
+
+                echo 'Pipeline Started Successfully'
+                
+            }
+        }
         
     }
 
