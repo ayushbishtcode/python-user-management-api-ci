@@ -70,7 +70,7 @@ pipeline {
                 ]) {
                     sh '''
                         export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-                        
+
                         echo "$DOCKER_PASS" | docker login \
                             -u "$DOCKER_USER" \
                             --password-stdin
@@ -82,6 +82,7 @@ pipeline {
                 }
             }
         }
+
 
     } // <-- stages block ends here
 
